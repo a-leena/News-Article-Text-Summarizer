@@ -11,6 +11,7 @@ def load_dataset(file_path, encoding_standard):
 
 
 def clean_dataset(text_set):
+    returning_set = []
     for i in range(len(text_set)):
         temp_string = text_set[i]
         
@@ -38,7 +39,7 @@ def clean_dataset(text_set):
         temp_string = re.sub(r"[<>()|&©ø\[\]\'\",;?~*!]", ' ', str(temp_string)).lower()
 
         #remove mailto attribute from the scraped HTML page
-        temp_string = re.sub("(mailto:))", ' ', str(temp_string)).lower()
+        temp_string = re.sub('(mailto:)', ' ', str(temp_string)).lower()
 
         #remove \x9*
         temp_string = re.sub(r"(\\x9\d)", ' ', str(temp_string)).lower()
@@ -76,4 +77,6 @@ def clean_dataset(text_set):
         temp_string = re.sub("(\s+.\s+)", ' ', str(temp_string)).lower()
 
         #put cleaned string back into the text set
-        text_set[i] = temp_string
+        returning_set.append(temp_string)
+    
+    return returning_set

@@ -36,7 +36,8 @@ def clean_dataset(text_set):
         temp_string = re.sub("(\.\.+)", ' ', str(temp_string)).lower()
 
         #remove special characters: <>()|&©ø"',;?~*!
-        temp_string = re.sub(r"[<>()|&©ø\[\]\'\",;?~*!]", ' ', str(temp_string)).lower()
+        #temp_string = re.sub(r"[<>()|&©ø\[\]\'\",;?~*!]", ' ', str(temp_string)).lower()
+        temp_string = re.sub(r"[<>()|&©ø\[\]\'\";~*]", ' ', str(temp_string)).lower()
 
         #remove mailto attribute from the scraped HTML page
         temp_string = re.sub('(mailto:)', ' ', str(temp_string)).lower()

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Text Summarizer</title>
+        <link rel="stylesheet" href="styles.css" type="text/css">
+        <script src="script.js" type="text/javascript"></script>
+    </head>
+    <body>
+
+        <form action="#" name="summarygenerator">
+            <textarea name="inputtext" rows="20" cols="100" placeholder="Enter the text to summarize" onkeypress="getText(event)" onkeydown="getText(event)" onchange="getText(event)" id="input_text"></textarea>
+            <p class="wordcount">Word count: <span class="wordcount" id="wordcount">0</span></p>
+            <input type="button" name="summarize" id="summarize" value="Summarize" onclick="generateSummary()" disabled>
+        </form>
+
+        <p id="summary"></p>        
+    </body>
+</html>

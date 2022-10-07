@@ -1,0 +1,144 @@
+body 
+{
+    margin:0% auto;
+    padding:0%;
+    height:100%;
+    background-color:#1e1e1e;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header
+{
+    position:fixed;
+    top:0%;
+    width:100%;
+    height:15%;
+    background:linear-gradient(to right,indigo,steelblue);
+    z-index:1;
+}
+
+header h1 {
+    color:white;
+    position:relative;
+    text-align:center;
+    z-index:1;
+    font-size:35px;
+}
+
+footer
+{
+    position:fixed;
+    bottom:0;
+    width:100%;
+    height:10%;
+    background:linear-gradient(to right,indigo,steelblue);
+    display: inline-block;
+    /* background-color:transparent; */
+}
+
+footer h4,h6{
+    position:relative;
+    text-align:center;
+    color:white;
+    z-index:1;
+    font-size:smaller;
+    display:inline-flex;
+    bottom:20%;
+}
+
+#menu {
+    left:3.5%;
+    font-size:large;
+    bottom:15%;
+}
+#tag {
+    left:46%;
+    right:50%;
+}
+
+main 
+{
+    position:absolute;
+    width:60%;
+    height:150%;
+    top:20%;
+    bottom:20%;
+    left:20%;
+    right:20%;
+    /* border:2px solid black; */
+}
+
+#inputtext {
+    width:80%;
+    height:100%;
+    margin:2.5% 7.5%;
+    border:none;
+    padding:2.5%;
+    font-size:15px;
+    font-family:'Montserrat', sans-serif;
+}
+
+.wordcount {
+    color:black;
+}
+
+#original {
+    height:50%;
+    background-color:white;
+}
+
+#original,#summarized {
+    margin:auto;
+    text-align:center;
+    border:1px solid grey;
+    border-radius:10px;
+}
+
+legend {
+    font-weight:bold;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color:white;
+    text-align:left;
+}
+
+.buttons {
+    margin:5% auto;
+    display:flex;
+    padding: 10px 20px;
+    border: none;
+    border-radius:18px;
+    text-decoration: none;
+    font-family: "montserrat", sans-serif;
+    font-weight: bold;
+    font-size:12.5px;
+    color: white;
+    background-color:indigo;
+}
+
+.buttons:hover{
+    color:black;
+    background-color:steelblue;
+    cursor:pointer;
+}
+
+.buttons:disabled {
+    background-color:grey;
+}
+
+.buttons:disabled:hover {
+    color:white;
+}
+
+#summarized {
+    height:20%;
+    overflow:scroll;  
+    background-color: white; 
+}
+
+#summarized p {
+    padding-left:10%;
+    padding-right:10%;
+    text-align:justify;
+    font-size:15px;
+}

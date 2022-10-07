@@ -3,23 +3,23 @@ function getText(event) {
     console.log(text);
     var count = text.length;
     document.getElementById("wordcount").innerHTML = count;
-    var button = document.getElementById("summarize");
+    var submitButton = document.getElementById("summarize");
+    var copyButton = document.getElementById("copy");
     var summary = document.getElementById("summary");
-    if (text.length==0) {
-        button.disabled = true;
-        if (summary.innerHTML.length != 0) {
-            var heading = document.getElementById("recentHeading")
-            summary.innerHTML = "";
-        }
-
+    if (text.length == 0) {
+        submitButton.disabled = true;
+        copyButton.disabled = true;
+        summary.innerHTML = "";
     }
     else {
-        button.disabled = false;
+        submitButton.disabled = false;
+        copyButton.disabled = false;
     }
 }
 
 function generateSummary() {
-    let source = document.getElementById("input_text");
+    source = document.getElementById("inputtext");
+    console.log(source.value);
 
     let xhr = new XMLHttpRequest();
     let url = "http://localhost:8000";
@@ -39,4 +39,11 @@ function generateSummary() {
     var data = JSON.stringify({"base_text": source.value});
 
     xhr.send(data);
+}
+
+function copyClipboard() {
+    var copyText = document.getElementById("summary");
+    console.log("something is running");
+    navigator.clipboard.writeText(copyText.innerHTML);
+    alert("Text copied!");
 }

@@ -27,7 +27,7 @@ function generateSummary() {
     xhr.open("POST", url, true);
 
     xhr.setRequestHeader("Content-Type","application/json");
-
+//receive
     xhr.onreadystatechange = function() {
         if(xhr.readyState === 4 && xhr.status === 200){
             parsed_data = JSON.parse(this.responseText);
@@ -35,7 +35,7 @@ function generateSummary() {
             document.getElementById('summary').innerHTML = parsed_data['summary'];
         }
     };
-
+//send
     var data = JSON.stringify({"base_text": source.value});
 
     xhr.send(data);
